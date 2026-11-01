@@ -16,9 +16,13 @@ rect(0,FY,W-1,H-1,FLOOR)
 rect(4,5,18,15,B)                              # body 15x11 (Clawd 12x8)
 for lx in (6,8,14,16): rect(lx,16,lx,18,B)     # same four legs
 rect(7,8,8,9,K); rect(14,8,15,9,K)             # same square eyes
-box(5,6,10,11,K); box(12,6,17,11,K); px[11,8]=K  # black-rim glasses
-rect(2,11,3,11,B)                              # right claw: small
-rect(19,10,21,12,B)                            # left claw: big
+for x0 in (5,12):                              # rounded black-rim glasses
+    box(x0,6,x0+5,11,K)
+    for cx,cy in ((x0,6),(x0+5,6),(x0,11),(x0+5,11)): px[cx,cy]=B
+    px[x0+1,7]=(250,220,200)                   # tiny lens glint
+px[11,7]=K
+rect(2,10,3,11,B)                              # arms: symmetric, Clawd-style
+rect(19,10,20,11,B)
 rect(10,14,12,14,K); px[13,13]=K               # little lopsided smirk
 for x,y in [(17,13),(16,14),(17,15)]: px[x,y]=CR   # thin crack
 

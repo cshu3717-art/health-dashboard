@@ -45,17 +45,21 @@ def frame(i):
         rect(lx,16+d,lx,20,B)
     if blink: rect(7,9+d,8,9+d,K); rect(14,9+d,15,9+d,K)
     else:     rect(7,8+d,8,9+d,K); rect(14,8+d,15,9+d,K)
-    box(5,6+d,10,11+d,K); box(12,6+d,17,11+d,K); p(11,8+d,K)
-    rect(0,11+d,1,11+d,B)                         # thin right arm
-    rect(19,10+d,21,12+d,B)                       # chunky left arm
+    for x0 in (5,12):
+        box(x0,6+d,x0+5,11+d,K)
+        for cx,cy in ((x0,6),(x0+5,6),(x0,11),(x0+5,11)): p(cx,cy+d,B)
+        p(x0+1,7+d,(250,220,200))
+    p(11,7+d,K)
+    rect(2,10+d,3,11+d,B)                         # arms: symmetric
+    rect(19,10+d,20,11+d,B)
     rect(10,14+d,12,14+d,K); p(13,13+d,K)         # smirk
     p(10,15+d,WH); p(12,15+d,WH)                  # fangs!
     for x,y in [(17,13),(16,14),(17,15)]: p(x,y+d,CR)
     # pumpkin bucket hanging from the big arm
-    rect(22,11+d,22,12+d,K)
-    rect(21,13+d,25,17+d,PUMP); rect(21,13+d,21,17+d,PUMPD); rect(25,13+d,25,17+d,PUMPD)
-    p(23,12+d,STEM)
-    g=GLOW[i%2]; p(22,14+d,g); p(24,14+d,g); rect(22,16+d,24,16+d,g)
+    p(20,12+d,K)
+    rect(19,13+d,23,17+d,PUMP); rect(19,13+d,19,17+d,PUMPD); rect(23,13+d,23,17+d,PUMPD)
+    p(21,12+d,STEM)
+    g=GLOW[i%2]; p(20,14+d,g); p(22,14+d,g); rect(20,16+d,22,16+d,g)
 
     # ---------- Clawd: little witch ----------
     ox=24; e = 0 if i%2==0 else -1
