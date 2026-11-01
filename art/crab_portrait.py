@@ -23,7 +23,6 @@ for x0 in (5,12):                              # rounded black-rim glasses
 px[11,7]=K
 rect(2,10,3,11,B)                              # arms: symmetric, Clawd-style
 rect(19,10,20,11,B)
-rect(10,14,12,14,K); px[13,13]=K               # little lopsided smirk
 for x,y in [(17,13),(16,14),(17,15)]: px[x,y]=CR   # thin crack
 
 # ---- Clawd ----
